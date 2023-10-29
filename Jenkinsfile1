@@ -1,0 +1,27 @@
+pipeline{
+    agent { 
+        label 'docker'
+  }
+    stages{
+        stage('Clone Code'){
+            steps{
+                sh "echo cloning code"
+                sh "echo clone code complete"
+                git 'https://github.com/Ohubabs/arsenal.git'
+            }
+        }
+         stage('Build Image'){
+            steps{
+                sh "echo build image"
+                sh "docker build -t princebabs/arsenal:v1 ."
+            }
+        }
+        stage('Push to DockerHub'){
+            steps{
+              sh "echo 'Push Image'"
+              sh 'docker push princebabs/arsenal:v1'
+                
+            }
+        }
+    }
+}
