@@ -6,6 +6,7 @@ pipeline{
         stage('Destroy Arsenal Web Server'){
             steps{
                 sh "echo 'Deploy Tesla To Cluster'"
+                sh "terraform init"
                 sh "terraform destroy --auto-approve" 
             }
         }
