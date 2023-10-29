@@ -3,7 +3,7 @@ pipeline{
         label 'terra'
   }
     stages{
-        stage('Destroy Arsenal Web Server'){
+        stage('Destroy Arsenal Web Server Today'){
             steps{
                 sh "echo 'Deploy Tesla To Cluster'"
                 sh "terraform init"
