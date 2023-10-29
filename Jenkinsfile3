@@ -1,0 +1,13 @@
+pipeline{
+    agent { 
+        label 'terra'
+  }
+    stages{
+        stage('Destroy Arsenal Web Server'){
+            steps{
+                sh "echo 'Deploy Tesla To Cluster'"
+                sh "terraform destroy --auto-approve" 
+            }
+        }
+    }
+}
