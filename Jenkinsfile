@@ -17,7 +17,7 @@ pipeline {
         env = 'dev'
       }
       steps {
-        sh 'sh "docker build -t princebabs/arsenal:v1 ."'
+        container(name: 'build image', shell: 'docker build -t princebabs/arsenal:v1 .')
       }
     }
 
