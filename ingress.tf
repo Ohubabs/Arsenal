@@ -24,8 +24,8 @@ resource "kubernetes_ingress_v1" "arsenal" {
       host = "www.skyways-hotel.com"  
       http {
         path {
-          path = "/arsenal"
-          path_type = "Exact"
+          path = "/arsenal/"
+          path_type = "Prefix"
           backend {
             service {
               name = "arsenal-svc"
