@@ -21,10 +21,10 @@ resource "kubernetes_ingress_v1" "arsenal" {
       }
     }
     rule {
-      host = "arsenal.skyways-hotel.com"  
+      host = "www.skyways-hotel.com"  
       http {
         path {
-          path = "/"
+          path = "/arsenal"
           path_type = "Exact"
           backend {
             service {
