@@ -25,7 +25,7 @@ resource "kubernetes_ingress_v1" "arsenal" {
       http {
         path {
           path = "/"
-          path_type = "Exact"
+          path_type = "Prefix"
           backend {
             service {
               name = "arsenal-svc"
