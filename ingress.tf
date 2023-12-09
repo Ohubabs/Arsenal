@@ -16,7 +16,7 @@ resource "kubernetes_ingress_v1" "arsenal" {
       service {
         name = "arsenal-svc"
         port {
-          number = 443
+          number = 80
         }
       }
     }
@@ -30,7 +30,7 @@ resource "kubernetes_ingress_v1" "arsenal" {
             service {
               name = "arsenal-svc"
               port {
-                number = 443
+                number = 80
               }
             }
           }
