@@ -7,8 +7,8 @@ resource "kubernetes_service_v1" "arsenal-svc" {
       app = "arsenal"
     }
     port {
-      port        = 80
-      target_port = 80
+      port        = 443
+      target_port = 443
     }
 
     type = "NodePort"
