@@ -21,11 +21,11 @@ resource "kubernetes_ingress_v1" "arsenal" {
       }
     }
     rule {
-      host = "www.skyways-hotel.com"  
+      host = "arsenal.skyways-hotel.com"  
       http {
         path {
-          path = "/arsenal/"
-          path_type = "Prefix"
+          path = "/"
+          path_type = "Exact"
           backend {
             service {
               name = "arsenal-svc"
