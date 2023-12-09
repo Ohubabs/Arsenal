@@ -2,7 +2,7 @@ resource "kubernetes_ingress_v1" "arsenal" {
   wait_for_load_balancer = true
   metadata {
     name = "arsenal"
-    namespace = "arsenal"
+    namespace = "default"
     annotations = {
         "alb.ingress.kubernetes.io/load-balancer-name" = "arsenal"
         "alb.ingress.kubernetes.io/scheme"             = "internet-facing"
