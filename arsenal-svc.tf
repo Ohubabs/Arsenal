@@ -11,6 +11,6 @@ resource "kubernetes_service_v1" "arsenal-svc" {
       target_port = 80
     }
 
-    type = "LoadBalancer"
+    type = "ClusterIP"
   }
 }
