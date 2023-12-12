@@ -20,4 +20,4 @@ resource "kubernetes_service_v1" "arsenal-svc" {
   }
 }
 
-#Note Last attempt at practicing NLB annotations and LoadBalancer did not work as of 12/5/23 but ALB and Nginx+NLB ingress works well.
+#Note Last attempt at practicing NLB service annotations and LoadBalancer did not work as of 12/5/23 but ALB and Nginx+NLB ingress works well.
