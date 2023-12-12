@@ -1,11 +1,11 @@
 resource "kubernetes_service_v1" "arsenal-svc" {
   metadata {
     name = "arsenal-svc"
-    annotations = [
-                    "service.beta.kubernetes.io/aws-load-balancer-nlb-target-type" = "ip"
-                    "service.beta.kubernetes.io/aws-load-balancer-scheme" =  "internet-facing"
-                    "service.beta.kubernetes.io/aws-load-balancer-name" = "arsenal-nlb"
-                  ]
+    #annotations = [
+                    #"service.beta.kubernetes.io/aws-load-balancer-nlb-target-type" = "ip"
+                    #"service.beta.kubernetes.io/aws-load-balancer-scheme" =  "internet-facing"
+                    #"service.beta.kubernetes.io/aws-load-balancer-name" = "arsenal-nlb"
+                  #]
   }
   spec {
     selector = {
@@ -16,6 +16,8 @@ resource "kubernetes_service_v1" "arsenal-svc" {
       target_port = 80
     }
 
-    type = "LoadBalancer"
+    type = "NodePort"
   }
 }
+
+#Note Last attempt at practicing NLB annotations and LoadBalancer did not work as of 12/5/23 but ALB and Nginx+NLB ingress works well.
