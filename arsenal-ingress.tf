@@ -75,21 +75,5 @@ resource "kubernetes_ingress_v1" "jenkins1" {
         }
       }
     }
-    rule {
-      http {
-        path {
-          path = "/matter"
-          path_type = "Prefix"
-          backend {
-            service {
-              name = "mattermost-team-edition"
-              port {
-                number = 80
-              }
-            }
-          }
-        }
-      }
-    }
   }
 }
