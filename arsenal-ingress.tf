@@ -36,7 +36,7 @@
 
 ##ALB
 
-resource "kubernetes_ingress_v1" "arsenal-ingress" {
+resource "kubernetes_ingress_v1" "jenkins1" {
   wait_for_load_balancer = true
   metadata {
     name = "arsenal"
@@ -45,7 +45,7 @@ resource "kubernetes_ingress_v1" "arsenal-ingress" {
         "alb.ingress.kubernetes.io/load-balancer-name" = "arsenal"
         "alb.ingress.kubernetes.io/scheme"             = "internet-facing"
         "alb.ingress.kubernetes.io/target-type"        = "ip"                                       
-        "alb.ingress.kubernetes.io/certificate-arn" = "arn:aws:acm:us-west-2:083772204804:certificate/f8707613-028b-470b-bd2a-703f5ac1e73d"
+        "alb.ingress.kubernetes.io/certificate-arn" = "arn:aws:acm:us-west-2:083772204804:certificate/58e604e3-40aa-4644-b0ad-8663f8e67c2a"
   }
   }
   spec {
@@ -75,5 +75,24 @@ resource "kubernetes_ingress_v1" "arsenal-ingress" {
         }
       }
     }
+    rule {
+      host = "mattermost.devopsnetwork.net"  
+      http {
+        path {
+          path = "/"
+          path_type = "Exact"
+          backend {
+            service {
+              name = "mattermost-team-edition"
+              port {
+                number = 80
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
   }
 }
