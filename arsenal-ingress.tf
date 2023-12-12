@@ -76,11 +76,10 @@ resource "kubernetes_ingress_v1" "jenkins1" {
       }
     }
     rule {
-      host = "mattermost.devopsnetwork.net"  
       http {
         path {
-          path = "/"
-          path_type = "Exact"
+          path = "/matter"
+          path_type = "Prefix"
           backend {
             service {
               name = "mattermost-team-edition"
