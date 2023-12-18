@@ -1,6 +1,7 @@
 resource "kubernetes_service_v1" "arsenal-svc" {
   metadata {
     name = "arsenal-svc"
+    namespace = "arsenal"
     #annotations = [
                     #"service.beta.kubernetes.io/aws-load-balancer-nlb-target-type" = "ip"
                     #"service.beta.kubernetes.io/aws-load-balancer-scheme" =  "internet-facing"
