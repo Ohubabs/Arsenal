@@ -40,7 +40,7 @@ resource "kubernetes_ingress_v1" "jenkins1" {
   wait_for_load_balancer = true
   metadata {
     name = "arsenal"
-    namespace = "default"
+    namespace = "arsenal"
     annotations = {
         "alb.ingress.kubernetes.io/load-balancer-name" = "arsenal"
         "alb.ingress.kubernetes.io/scheme"             = "internet-facing"
