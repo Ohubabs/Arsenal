@@ -4,7 +4,7 @@
 #  wait_for_load_balancer = true
 #  metadata {
 #    name = "arsenal"
-#    namespace = "default"
+#    namespace = "arsenal"
 #    annotations = {
 #        "cert-manager.io/cluster-issuer" = "arsenal-issuer1"
 #  }
@@ -36,7 +36,7 @@
 
 ##ALB
 
-resource "kubernetes_ingress_v1" "jenkins1" {
+resource "kubernetes_ingress_v1" "arsenal" {
   wait_for_load_balancer = true
   metadata {
     name = "arsenal"
