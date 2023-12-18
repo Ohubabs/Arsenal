@@ -1,6 +1,7 @@
 resource "kubernetes_deployment_v1" "arsenal-deploy" {
   metadata {
     name = "arsenal"
+    namespace = "arsenal"
   }
 
   spec {
